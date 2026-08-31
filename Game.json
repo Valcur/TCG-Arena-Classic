@@ -1,0 +1,74 @@
+{
+  "name": "Classic",
+  "menuBackgroundImage": "https://valcur.github.io/TCG-Arena-Classic/Assets/banner.jpeg",
+  "deckBuilding": {
+    "mainFilters": [
+      "type",
+      "cost",
+      "set"
+    ],
+    "formats": [
+      {
+        "title": "Classic",
+        "gameplay": "Classic"
+      }
+    ]
+  },
+  "gameplay": {
+    "Classic": {
+      "mulligan": {},
+      "newTurn": {
+        "drawOnStart": false,
+        "drawPerTurn": 0
+      },
+      "draggableTokens": [],
+      "countersStartingValues": [],
+      "sections": {
+        "sharedZone": {
+          "height": 16,
+          "layout": {
+            "direction": "row",
+            "content": [
+              {
+                "section": "CentralDeck"
+              }
+            ]
+          }
+        },
+        "layout": {
+          "direction": "row",
+          "content": []
+        },
+        "categoriesAlreadyOnBoard": [],
+        "autoPlayFromHand": {
+
+        },
+        "autoPlayFromStack": {
+
+        },
+        "sectionsDict": {
+          "CentralDeck": {
+            "height": 15,
+            "isHidden": "yes",
+            "alignment": "DECK",
+            "displayedTitle": "Deck"
+          }
+        }
+      }
+    }
+  },
+  "defaultRessources": {
+    "backgrounds": [
+      "https://valcur.github.io/TCG-Arena-Marvel-Champions/Images/Backgrounds/spiderman.jpg"
+    ],
+    "decksUrl": ""
+  },
+  "scriptsUrls": [
+    "https://valcur.github.io/TCG-Arena-Classic/functions.jsx"
+  ],
+  "customHelp": "",
+  "cards": {
+    "dataUrl": "https://valcur.github.io/TCG-Arena-Classic/Cards.json",
+    "cardBack": "https://valcur.github.io/TCG-Arena-Classic/Assets/card_r12_c13.png"
+  }
+}
