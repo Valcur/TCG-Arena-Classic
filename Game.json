@@ -59,7 +59,8 @@
   },
   "defaultRessources": {
     "backgrounds": [
-      "https://valcur.github.io/TCG-Arena-Marvel-Champions/Images/Backgrounds/spiderman.jpg"
+      "https://valcur.github.io/TCG-Arena-Classic/Assets/Backgrounds/1.jpg",
+      "https://valcur.github.io/TCG-Arena-Classic/Assets/Backgrounds/2.jpg"
     ],
     "decksUrl": ""
   },
