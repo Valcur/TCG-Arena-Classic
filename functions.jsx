@@ -9,6 +9,7 @@ async function iniDeck(deckMode) {
 
     const handSize = 7
     // shuffle deck
+    console.log(deck)
     await functions.giveCardTo(deck[0], game.turn.turnOrder[0], "Hand")
 
     await functions.repositionCards()
