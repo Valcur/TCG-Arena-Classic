@@ -1,13 +1,15 @@
 async function iniDeck(deckMode) {
     const deckList = deckLists[deckMode]
     if (!deckList) return
+    const deck = []
     for (const cardId of deckList) {
-        await functions.createCard(cardId, "CentralDeck")
+        deck.push(await functions.createCard(cardId, "CentralDeck"))
     }
     await functions.shuffleSection("CentralDeck")
 
     const handSize = 7
-    await functions.giveCardTo(cards?.CentralDeck[0], game.turn.turnOrder[0], "Hand")
+    // shuffle deck
+    await functions.giveCardTo(deck[0], game.turn.turnOrder[0], "Hand")
 
     await functions.repositionCards()
 }
