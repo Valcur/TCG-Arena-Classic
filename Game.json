@@ -69,6 +69,6 @@
   "customHelp": "",
   "cards": {
     "dataUrl": "https://valcur.github.io/TCG-Arena-Classic/Cards.json",
-    "cardBack": "https://valcur.github.io/TCG-Arena-Classic/Assets/card_r00_c13.png"
+    "cardBack": "https://valcur.github.io/TCG-Arena-Classic/Assets/cardBack.jpg"
   }
 }
