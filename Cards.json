@@ -1,16 +1,1328 @@
 {
-    "a": {
-      "id": "a",
-      "face": {
-        "front": {
-          "name": "a",
-          "type": "Card",
-          "cost": 0,
-          "image": "https://valcur.github.io/TCG-Arena-Classic/Assets/Cards/Cups09.jpg"
-        }
-      },
-      "name": "aa",
-      "type": "Card",
-      "cost": 0
-    }
+  "THEFOOL": {
+    "id": "THEFOOL",
+    "face": {
+      "front": {
+        "name": "The Fool",
+        "type": "Card",
+        "cost": 0,
+        "image": "https://valcur.github.io/TCG-Arena-Classic/Assets/Cards/00-TheFool.jpg"
+      }
+    },
+    "name": "The Fool",
+    "type": "Card",
+    "cost": 0,
+    "color": "Purple",
+    "value": "0",
+    "special": true
+  },
+  "THEMAGICIAN": {
+    "id": "THEMAGICIAN",
+    "face": {
+      "front": {
+        "name": "The Magician",
+        "type": "Card",
+        "cost": 0,
+        "image": "https://valcur.github.io/TCG-Arena-Classic/Assets/Cards/01-TheMagician.jpg"
+      }
+    },
+    "name": "The Magician",
+    "type": "Card",
+    "cost": 0,
+    "color": "Purple",
+    "value": "1",
+    "special": true
+  },
+  "THEHIGHPRIESTESS": {
+    "id": "THEHIGHPRIESTESS",
+    "face": {
+      "front": {
+        "name": "The High Priestess",
+        "type": "Card",
+        "cost": 0,
+        "image": "https://valcur.github.io/TCG-Arena-Classic/Assets/Cards/02-TheHighPriestess.jpg"
+      }
+    },
+    "name": "The High Priestess",
+    "type": "Card",
+    "cost": 0,
+    "color": "Purple",
+    "value": "2",
+    "special": true
+  },
+  "THEEMPRESS": {
+    "id": "THEEMPRESS",
+    "face": {
+      "front": {
+        "name": "The Empress",
+        "type": "Card",
+        "cost": 0,
+        "image": "https://valcur.github.io/TCG-Arena-Classic/Assets/Cards/03-TheEmpress.jpg"
+      }
+    },
+    "name": "The Empress",
+    "type": "Card",
+    "cost": 0,
+    "color": "Purple",
+    "value": "3",
+    "special": true
+  },
+  "THEEMPEROR": {
+    "id": "THEEMPEROR",
+    "face": {
+      "front": {
+        "name": "The Emperor",
+        "type": "Card",
+        "cost": 0,
+        "image": "https://valcur.github.io/TCG-Arena-Classic/Assets/Cards/04-TheEmperor.jpg"
+      }
+    },
+    "name": "The Emperor",
+    "type": "Card",
+    "cost": 0,
+    "color": "Purple",
+    "value": "4",
+    "special": true
+  },
+  "THEHIEROPHANT": {
+    "id": "THEHIEROPHANT",
+    "face": {
+      "front": {
+        "name": "The Hierophant",
+        "type": "Card",
+        "cost": 0,
+        "image": "https://valcur.github.io/TCG-Arena-Classic/Assets/Cards/05-TheHierophant.jpg"
+      }
+    },
+    "name": "The Hierophant",
+    "type": "Card",
+    "cost": 0,
+    "color": "Purple",
+    "value": "5",
+    "special": true
+  },
+  "THELOVERS": {
+    "id": "THELOVERS",
+    "face": {
+      "front": {
+        "name": "The Lovers",
+        "type": "Card",
+        "cost": 0,
+        "image": "https://valcur.github.io/TCG-Arena-Classic/Assets/Cards/06-TheLovers.jpg"
+      }
+    },
+    "name": "The Lovers",
+    "type": "Card",
+    "cost": 0,
+    "color": "Purple",
+    "value": "6",
+    "special": true
+  },
+  "THECHARIOT": {
+    "id": "THECHARIOT",
+    "face": {
+      "front": {
+        "name": "The Chariot",
+        "type": "Card",
+        "cost": 0,
+        "image": "https://valcur.github.io/TCG-Arena-Classic/Assets/Cards/07-TheChariot.jpg"
+      }
+    },
+    "name": "The Chariot",
+    "type": "Card",
+    "cost": 0,
+    "color": "Purple",
+    "value": "7",
+    "special": true
+  },
+  "STRENGTH": {
+    "id": "STRENGTH",
+    "face": {
+      "front": {
+        "name": "Strength",
+        "type": "Card",
+        "cost": 0,
+        "image": "https://valcur.github.io/TCG-Arena-Classic/Assets/Cards/08-Strength.jpg"
+      }
+    },
+    "name": "Strength",
+    "type": "Card",
+    "cost": 0,
+    "color": "Purple",
+    "value": "8",
+    "special": true
+  },
+  "THEHERMIT": {
+    "id": "THEHERMIT",
+    "face": {
+      "front": {
+        "name": "The Hermit",
+        "type": "Card",
+        "cost": 0,
+        "image": "https://valcur.github.io/TCG-Arena-Classic/Assets/Cards/09-TheHermit.jpg"
+      }
+    },
+    "name": "The Hermit",
+    "type": "Card",
+    "cost": 0,
+    "color": "Purple",
+    "value": "9",
+    "special": true
+  },
+  "WHEELOFFORTUNE": {
+    "id": "WHEELOFFORTUNE",
+    "face": {
+      "front": {
+        "name": "Wheel of Fortune",
+        "type": "Card",
+        "cost": 0,
+        "image": "https://valcur.github.io/TCG-Arena-Classic/Assets/Cards/10-WheelOfFortune.jpg"
+      }
+    },
+    "name": "Wheel of Fortune",
+    "type": "Card",
+    "cost": 0,
+    "color": "Purple",
+    "value": "10",
+    "special": true
+  },
+  "JUSTICE": {
+    "id": "JUSTICE",
+    "face": {
+      "front": {
+        "name": "Justice",
+        "type": "Card",
+        "cost": 0,
+        "image": "https://valcur.github.io/TCG-Arena-Classic/Assets/Cards/11-Justice.jpg"
+      }
+    },
+    "name": "Justice",
+    "type": "Card",
+    "cost": 0,
+    "color": "Purple",
+    "value": "11",
+    "special": true
+  },
+  "THEHANGEDMAN": {
+    "id": "THEHANGEDMAN",
+    "face": {
+      "front": {
+        "name": "The Hanged Man",
+        "type": "Card",
+        "cost": 0,
+        "image": "https://valcur.github.io/TCG-Arena-Classic/Assets/Cards/12-TheHangedMan.jpg"
+      }
+    },
+    "name": "The Hanged Man",
+    "type": "Card",
+    "cost": 0,
+    "color": "Purple",
+    "value": "12",
+    "special": true
+  },
+  "DEATH": {
+    "id": "DEATH",
+    "face": {
+      "front": {
+        "name": "Death",
+        "type": "Card",
+        "cost": 0,
+        "image": "https://valcur.github.io/TCG-Arena-Classic/Assets/Cards/13-Death.jpg"
+      }
+    },
+    "name": "Death",
+    "type": "Card",
+    "cost": 0,
+    "color": "Purple",
+    "value": "13",
+    "special": true
+  },
+  "TEMPERANCE": {
+    "id": "TEMPERANCE",
+    "face": {
+      "front": {
+        "name": "Temperance",
+        "type": "Card",
+        "cost": 0,
+        "image": "https://valcur.github.io/TCG-Arena-Classic/Assets/Cards/14-Temperance.jpg"
+      }
+    },
+    "name": "Temperance",
+    "type": "Card",
+    "cost": 0,
+    "color": "Purple",
+    "value": "14",
+    "special": true
+  },
+  "THEDEVIL": {
+    "id": "THEDEVIL",
+    "face": {
+      "front": {
+        "name": "The Devil",
+        "type": "Card",
+        "cost": 0,
+        "image": "https://valcur.github.io/TCG-Arena-Classic/Assets/Cards/15-TheDevil.jpg"
+      }
+    },
+    "name": "The Devil",
+    "type": "Card",
+    "cost": 0,
+    "color": "Purple",
+    "value": "15",
+    "special": true
+  },
+  "THETOWER": {
+    "id": "THETOWER",
+    "face": {
+      "front": {
+        "name": "The Tower",
+        "type": "Card",
+        "cost": 0,
+        "image": "https://valcur.github.io/TCG-Arena-Classic/Assets/Cards/16-TheTower.jpg"
+      }
+    },
+    "name": "The Tower",
+    "type": "Card",
+    "cost": 0,
+    "color": "Purple",
+    "value": "16",
+    "special": true
+  },
+  "THESTAR": {
+    "id": "THESTAR",
+    "face": {
+      "front": {
+        "name": "The Star",
+        "type": "Card",
+        "cost": 0,
+        "image": "https://valcur.github.io/TCG-Arena-Classic/Assets/Cards/17-TheStar.jpg"
+      }
+    },
+    "name": "The Star",
+    "type": "Card",
+    "cost": 0,
+    "color": "Purple",
+    "value": "17",
+    "special": true
+  },
+  "THEMOON": {
+    "id": "THEMOON",
+    "face": {
+      "front": {
+        "name": "The Moon",
+        "type": "Card",
+        "cost": 0,
+        "image": "https://valcur.github.io/TCG-Arena-Classic/Assets/Cards/18-TheMoon.jpg"
+      }
+    },
+    "name": "The Moon",
+    "type": "Card",
+    "cost": 0,
+    "color": "Purple",
+    "value": "18",
+    "special": true
+  },
+  "THESUN": {
+    "id": "THESUN",
+    "face": {
+      "front": {
+        "name": "The Sun",
+        "type": "Card",
+        "cost": 0,
+        "image": "https://valcur.github.io/TCG-Arena-Classic/Assets/Cards/19-TheSun.jpg"
+      }
+    },
+    "name": "The Sun",
+    "type": "Card",
+    "cost": 0,
+    "color": "Purple",
+    "value": "19",
+    "special": true
+  },
+  "JUDGEMENT": {
+    "id": "JUDGEMENT",
+    "face": {
+      "front": {
+        "name": "Judgement",
+        "type": "Card",
+        "cost": 0,
+        "image": "https://valcur.github.io/TCG-Arena-Classic/Assets/Cards/20-Judgement.jpg"
+      }
+    },
+    "name": "Judgement",
+    "type": "Card",
+    "cost": 0,
+    "color": "Purple",
+    "value": "20",
+    "special": true
+  },
+  "THEWORLD": {
+    "id": "THEWORLD",
+    "face": {
+      "front": {
+        "name": "The World",
+        "type": "Card",
+        "cost": 0,
+        "image": "https://valcur.github.io/TCG-Arena-Classic/Assets/Cards/21-TheWorld.jpg"
+      }
+    },
+    "name": "The World",
+    "type": "Card",
+    "cost": 0,
+    "color": "Purple",
+    "value": "21",
+    "special": true
+  },
+  "ACEOFCUPS": {
+    "id": "ACEOFCUPS",
+    "face": {
+      "front": {
+        "name": "Ace of Cups",
+        "type": "Card",
+        "cost": 0,
+        "image": "https://valcur.github.io/TCG-Arena-Classic/Assets/Cards/Cups01.jpg"
+      }
+    },
+    "name": "Ace of Cups",
+    "type": "Card",
+    "cost": 0,
+    "color": "Blue",
+    "value": "1",
+    "special": false
+  },
+  "TWOOFCUPS": {
+    "id": "TWOOFCUPS",
+    "face": {
+      "front": {
+        "name": "Two of Cups",
+        "type": "Card",
+        "cost": 0,
+        "image": "https://valcur.github.io/TCG-Arena-Classic/Assets/Cards/Cups02.jpg"
+      }
+    },
+    "name": "Two of Cups",
+    "type": "Card",
+    "cost": 0,
+    "color": "Blue",
+    "value": "2",
+    "special": false
+  },
+  "THREEOFCUPS": {
+    "id": "THREEOFCUPS",
+    "face": {
+      "front": {
+        "name": "Three of Cups",
+        "type": "Card",
+        "cost": 0,
+        "image": "https://valcur.github.io/TCG-Arena-Classic/Assets/Cards/Cups03.jpg"
+      }
+    },
+    "name": "Three of Cups",
+    "type": "Card",
+    "cost": 0,
+    "color": "Blue",
+    "value": "3",
+    "special": false
+  },
+  "FOUROFCUPS": {
+    "id": "FOUROFCUPS",
+    "face": {
+      "front": {
+        "name": "Four of Cups",
+        "type": "Card",
+        "cost": 0,
+        "image": "https://valcur.github.io/TCG-Arena-Classic/Assets/Cards/Cups04.jpg"
+      }
+    },
+    "name": "Four of Cups",
+    "type": "Card",
+    "cost": 0,
+    "color": "Blue",
+    "value": "4",
+    "special": false
+  },
+  "FIVEOFCUPS": {
+    "id": "FIVEOFCUPS",
+    "face": {
+      "front": {
+        "name": "Five of Cups",
+        "type": "Card",
+        "cost": 0,
+        "image": "https://valcur.github.io/TCG-Arena-Classic/Assets/Cards/Cups05.jpg"
+      }
+    },
+    "name": "Five of Cups",
+    "type": "Card",
+    "cost": 0,
+    "color": "Blue",
+    "value": "5",
+    "special": false
+  },
+  "SIXOFCUPS": {
+    "id": "SIXOFCUPS",
+    "face": {
+      "front": {
+        "name": "Six of Cups",
+        "type": "Card",
+        "cost": 0,
+        "image": "https://valcur.github.io/TCG-Arena-Classic/Assets/Cards/Cups06.jpg"
+      }
+    },
+    "name": "Six of Cups",
+    "type": "Card",
+    "cost": 0,
+    "color": "Blue",
+    "value": "6",
+    "special": false
+  },
+  "SEVENOFCUPS": {
+    "id": "SEVENOFCUPS",
+    "face": {
+      "front": {
+        "name": "Seven of Cups",
+        "type": "Card",
+        "cost": 0,
+        "image": "https://valcur.github.io/TCG-Arena-Classic/Assets/Cards/Cups07.jpg"
+      }
+    },
+    "name": "Seven of Cups",
+    "type": "Card",
+    "cost": 0,
+    "color": "Blue",
+    "value": "7",
+    "special": false
+  },
+  "EIGHTOFCUPS": {
+    "id": "EIGHTOFCUPS",
+    "face": {
+      "front": {
+        "name": "Eight of Cups",
+        "type": "Card",
+        "cost": 0,
+        "image": "https://valcur.github.io/TCG-Arena-Classic/Assets/Cards/Cups08.jpg"
+      }
+    },
+    "name": "Eight of Cups",
+    "type": "Card",
+    "cost": 0,
+    "color": "Blue",
+    "value": "8",
+    "special": false
+  },
+  "NINEOFCUPS": {
+    "id": "NINEOFCUPS",
+    "face": {
+      "front": {
+        "name": "Nine of Cups",
+        "type": "Card",
+        "cost": 0,
+        "image": "https://valcur.github.io/TCG-Arena-Classic/Assets/Cards/Cups09.jpg"
+      }
+    },
+    "name": "Nine of Cups",
+    "type": "Card",
+    "cost": 0,
+    "color": "Blue",
+    "value": "9",
+    "special": false
+  },
+  "TENOFCUPS": {
+    "id": "TENOFCUPS",
+    "face": {
+      "front": {
+        "name": "Ten of Cups",
+        "type": "Card",
+        "cost": 0,
+        "image": "https://valcur.github.io/TCG-Arena-Classic/Assets/Cards/Cups10.jpg"
+      }
+    },
+    "name": "Ten of Cups",
+    "type": "Card",
+    "cost": 0,
+    "color": "Blue",
+    "value": "10",
+    "special": false
+  },
+  "PAGEOFCUPS": {
+    "id": "PAGEOFCUPS",
+    "face": {
+      "front": {
+        "name": "Page of Cups",
+        "type": "Card",
+        "cost": 0,
+        "image": "https://valcur.github.io/TCG-Arena-Classic/Assets/Cards/Cups11.jpg"
+      }
+    },
+    "name": "Page of Cups",
+    "type": "Card",
+    "cost": 0,
+    "color": "Blue",
+    "value": "11",
+    "special": false
+  },
+  "KNIGHTOFCUPS": {
+    "id": "KNIGHTOFCUPS",
+    "face": {
+      "front": {
+        "name": "Knight of Cups",
+        "type": "Card",
+        "cost": 0,
+        "image": "https://valcur.github.io/TCG-Arena-Classic/Assets/Cards/Cups12.jpg"
+      }
+    },
+    "name": "Knight of Cups",
+    "type": "Card",
+    "cost": 0,
+    "color": "Blue",
+    "value": "12",
+    "special": false
+  },
+  "QUEENOFCUPS": {
+    "id": "QUEENOFCUPS",
+    "face": {
+      "front": {
+        "name": "Queen of Cups",
+        "type": "Card",
+        "cost": 0,
+        "image": "https://valcur.github.io/TCG-Arena-Classic/Assets/Cards/Cups13.jpg"
+      }
+    },
+    "name": "Queen of Cups",
+    "type": "Card",
+    "cost": 0,
+    "color": "Blue",
+    "value": "13",
+    "special": false
+  },
+  "KINGOFCUPS": {
+    "id": "KINGOFCUPS",
+    "face": {
+      "front": {
+        "name": "King of Cups",
+        "type": "Card",
+        "cost": 0,
+        "image": "https://valcur.github.io/TCG-Arena-Classic/Assets/Cards/Cups14.jpg"
+      }
+    },
+    "name": "King of Cups",
+    "type": "Card",
+    "cost": 0,
+    "color": "Blue",
+    "value": "14",
+    "special": false
+  },
+  "ACEOFPENTACLES": {
+    "id": "ACEOFPENTACLES",
+    "face": {
+      "front": {
+        "name": "Ace of Pentacles",
+        "type": "Card",
+        "cost": 0,
+        "image": "https://valcur.github.io/TCG-Arena-Classic/Assets/Cards/Pentacles01.jpg"
+      }
+    },
+    "name": "Ace of Pentacles",
+    "type": "Card",
+    "cost": 0,
+    "color": "Green",
+    "value": "1",
+    "special": false
+  },
+  "TWOOFPENTACLES": {
+    "id": "TWOOFPENTACLES",
+    "face": {
+      "front": {
+        "name": "Two of Pentacles",
+        "type": "Card",
+        "cost": 0,
+        "image": "https://valcur.github.io/TCG-Arena-Classic/Assets/Cards/Pentacles02.jpg"
+      }
+    },
+    "name": "Two of Pentacles",
+    "type": "Card",
+    "cost": 0,
+    "color": "Green",
+    "value": "2",
+    "special": false
+  },
+  "THREEOFPENTACLES": {
+    "id": "THREEOFPENTACLES",
+    "face": {
+      "front": {
+        "name": "Three of Pentacles",
+        "type": "Card",
+        "cost": 0,
+        "image": "https://valcur.github.io/TCG-Arena-Classic/Assets/Cards/Pentacles03.jpg"
+      }
+    },
+    "name": "Three of Pentacles",
+    "type": "Card",
+    "cost": 0,
+    "color": "Green",
+    "value": "3",
+    "special": false
+  },
+  "FOUROFPENTACLES": {
+    "id": "FOUROFPENTACLES",
+    "face": {
+      "front": {
+        "name": "Four of Pentacles",
+        "type": "Card",
+        "cost": 0,
+        "image": "https://valcur.github.io/TCG-Arena-Classic/Assets/Cards/Pentacles04.jpg"
+      }
+    },
+    "name": "Four of Pentacles",
+    "type": "Card",
+    "cost": 0,
+    "color": "Green",
+    "value": "4",
+    "special": false
+  },
+  "FIVEOFPENTACLES": {
+    "id": "FIVEOFPENTACLES",
+    "face": {
+      "front": {
+        "name": "Five of Pentacles",
+        "type": "Card",
+        "cost": 0,
+        "image": "https://valcur.github.io/TCG-Arena-Classic/Assets/Cards/Pentacles05.jpg"
+      }
+    },
+    "name": "Five of Pentacles",
+    "type": "Card",
+    "cost": 0,
+    "color": "Green",
+    "value": "5",
+    "special": false
+  },
+  "SIXOFPENTACLES": {
+    "id": "SIXOFPENTACLES",
+    "face": {
+      "front": {
+        "name": "Six of Pentacles",
+        "type": "Card",
+        "cost": 0,
+        "image": "https://valcur.github.io/TCG-Arena-Classic/Assets/Cards/Pentacles06.jpg"
+      }
+    },
+    "name": "Six of Pentacles",
+    "type": "Card",
+    "cost": 0,
+    "color": "Green",
+    "value": "6",
+    "special": false
+  },
+  "SEVENOFPENTACLES": {
+    "id": "SEVENOFPENTACLES",
+    "face": {
+      "front": {
+        "name": "Seven of Pentacles",
+        "type": "Card",
+        "cost": 0,
+        "image": "https://valcur.github.io/TCG-Arena-Classic/Assets/Cards/Pentacles07.jpg"
+      }
+    },
+    "name": "Seven of Pentacles",
+    "type": "Card",
+    "cost": 0,
+    "color": "Green",
+    "value": "7",
+    "special": false
+  },
+  "EIGHTOFPENTACLES": {
+    "id": "EIGHTOFPENTACLES",
+    "face": {
+      "front": {
+        "name": "Eight of Pentacles",
+        "type": "Card",
+        "cost": 0,
+        "image": "https://valcur.github.io/TCG-Arena-Classic/Assets/Cards/Pentacles08.jpg"
+      }
+    },
+    "name": "Eight of Pentacles",
+    "type": "Card",
+    "cost": 0,
+    "color": "Green",
+    "value": "8",
+    "special": false
+  },
+  "NINEOFPENTACLES": {
+    "id": "NINEOFPENTACLES",
+    "face": {
+      "front": {
+        "name": "Nine of Pentacles",
+        "type": "Card",
+        "cost": 0,
+        "image": "https://valcur.github.io/TCG-Arena-Classic/Assets/Cards/Pentacles09.jpg"
+      }
+    },
+    "name": "Nine of Pentacles",
+    "type": "Card",
+    "cost": 0,
+    "color": "Green",
+    "value": "9",
+    "special": false
+  },
+  "TENOFPENTACLES": {
+    "id": "TENOFPENTACLES",
+    "face": {
+      "front": {
+        "name": "Ten of Pentacles",
+        "type": "Card",
+        "cost": 0,
+        "image": "https://valcur.github.io/TCG-Arena-Classic/Assets/Cards/Pentacles10.jpg"
+      }
+    },
+    "name": "Ten of Pentacles",
+    "type": "Card",
+    "cost": 0,
+    "color": "Green",
+    "value": "10",
+    "special": false
+  },
+  "PAGEOFPENTACLES": {
+    "id": "PAGEOFPENTACLES",
+    "face": {
+      "front": {
+        "name": "Page of Pentacles",
+        "type": "Card",
+        "cost": 0,
+        "image": "https://valcur.github.io/TCG-Arena-Classic/Assets/Cards/Pentacles11.jpg"
+      }
+    },
+    "name": "Page of Pentacles",
+    "type": "Card",
+    "cost": 0,
+    "color": "Green",
+    "value": "11",
+    "special": false
+  },
+  "KNIGHTOFPENTACLES": {
+    "id": "KNIGHTOFPENTACLES",
+    "face": {
+      "front": {
+        "name": "Knight of Pentacles",
+        "type": "Card",
+        "cost": 0,
+        "image": "https://valcur.github.io/TCG-Arena-Classic/Assets/Cards/Pentacles12.jpg"
+      }
+    },
+    "name": "Knight of Pentacles",
+    "type": "Card",
+    "cost": 0,
+    "color": "Green",
+    "value": "12",
+    "special": false
+  },
+  "QUEENOFPENTACLES": {
+    "id": "QUEENOFPENTACLES",
+    "face": {
+      "front": {
+        "name": "Queen of Pentacles",
+        "type": "Card",
+        "cost": 0,
+        "image": "https://valcur.github.io/TCG-Arena-Classic/Assets/Cards/Pentacles13.jpg"
+      }
+    },
+    "name": "Queen of Pentacles",
+    "type": "Card",
+    "cost": 0,
+    "color": "Green",
+    "value": "13",
+    "special": false
+  },
+  "KINGOFPENTACLES": {
+    "id": "KINGOFPENTACLES",
+    "face": {
+      "front": {
+        "name": "King of Pentacles",
+        "type": "Card",
+        "cost": 0,
+        "image": "https://valcur.github.io/TCG-Arena-Classic/Assets/Cards/Pentacles14.jpg"
+      }
+    },
+    "name": "King of Pentacles",
+    "type": "Card",
+    "cost": 0,
+    "color": "Green",
+    "value": "14",
+    "special": false
+  },
+  "ACEOFSWORDS": {
+    "id": "ACEOFSWORDS",
+    "face": {
+      "front": {
+        "name": "Ace of Swords",
+        "type": "Card",
+        "cost": 0,
+        "image": "https://valcur.github.io/TCG-Arena-Classic/Assets/Cards/Swords01.jpg"
+      }
+    },
+    "name": "Ace of Swords",
+    "type": "Card",
+    "cost": 0,
+    "color": "Yellow",
+    "value": "1",
+    "special": false
+  },
+  "TWOOFSWORDS": {
+    "id": "TWOOFSWORDS",
+    "face": {
+      "front": {
+        "name": "Two of Swords",
+        "type": "Card",
+        "cost": 0,
+        "image": "https://valcur.github.io/TCG-Arena-Classic/Assets/Cards/Swords02.jpg"
+      }
+    },
+    "name": "Two of Swords",
+    "type": "Card",
+    "cost": 0,
+    "color": "Yellow",
+    "value": "2",
+    "special": false
+  },
+  "THREEOFSWORDS": {
+    "id": "THREEOFSWORDS",
+    "face": {
+      "front": {
+        "name": "Three of Swords",
+        "type": "Card",
+        "cost": 0,
+        "image": "https://valcur.github.io/TCG-Arena-Classic/Assets/Cards/Swords03.jpg"
+      }
+    },
+    "name": "Three of Swords",
+    "type": "Card",
+    "cost": 0,
+    "color": "Yellow",
+    "value": "3",
+    "special": false
+  },
+  "FOUROFSWORDS": {
+    "id": "FOUROFSWORDS",
+    "face": {
+      "front": {
+        "name": "Four of Swords",
+        "type": "Card",
+        "cost": 0,
+        "image": "https://valcur.github.io/TCG-Arena-Classic/Assets/Cards/Swords04.jpg"
+      }
+    },
+    "name": "Four of Swords",
+    "type": "Card",
+    "cost": 0,
+    "color": "Yellow",
+    "value": "4",
+    "special": false
+  },
+  "FIVEOFSWORDS": {
+    "id": "FIVEOFSWORDS",
+    "face": {
+      "front": {
+        "name": "Five of Swords",
+        "type": "Card",
+        "cost": 0,
+        "image": "https://valcur.github.io/TCG-Arena-Classic/Assets/Cards/Swords05.jpg"
+      }
+    },
+    "name": "Five of Swords",
+    "type": "Card",
+    "cost": 0,
+    "color": "Yellow",
+    "value": "5",
+    "special": false
+  },
+  "SIXOFSWORDS": {
+    "id": "SIXOFSWORDS",
+    "face": {
+      "front": {
+        "name": "Six of Swords",
+        "type": "Card",
+        "cost": 0,
+        "image": "https://valcur.github.io/TCG-Arena-Classic/Assets/Cards/Swords06.jpg"
+      }
+    },
+    "name": "Six of Swords",
+    "type": "Card",
+    "cost": 0,
+    "color": "Yellow",
+    "value": "6",
+    "special": false
+  },
+  "SEVENOFSWORDS": {
+    "id": "SEVENOFSWORDS",
+    "face": {
+      "front": {
+        "name": "Seven of Swords",
+        "type": "Card",
+        "cost": 0,
+        "image": "https://valcur.github.io/TCG-Arena-Classic/Assets/Cards/Swords07.jpg"
+      }
+    },
+    "name": "Seven of Swords",
+    "type": "Card",
+    "cost": 0,
+    "color": "Yellow",
+    "value": "7",
+    "special": false
+  },
+  "EIGHTOFSWORDS": {
+    "id": "EIGHTOFSWORDS",
+    "face": {
+      "front": {
+        "name": "Eight of Swords",
+        "type": "Card",
+        "cost": 0,
+        "image": "https://valcur.github.io/TCG-Arena-Classic/Assets/Cards/Swords08.jpg"
+      }
+    },
+    "name": "Eight of Swords",
+    "type": "Card",
+    "cost": 0,
+    "color": "Yellow",
+    "value": "8",
+    "special": false
+  },
+  "NINEOFSWORDS": {
+    "id": "NINEOFSWORDS",
+    "face": {
+      "front": {
+        "name": "Nine of Swords",
+        "type": "Card",
+        "cost": 0,
+        "image": "https://valcur.github.io/TCG-Arena-Classic/Assets/Cards/Swords09.jpg"
+      }
+    },
+    "name": "Nine of Swords",
+    "type": "Card",
+    "cost": 0,
+    "color": "Yellow",
+    "value": "9",
+    "special": false
+  },
+  "TENOFSWORDS": {
+    "id": "TENOFSWORDS",
+    "face": {
+      "front": {
+        "name": "Ten of Swords",
+        "type": "Card",
+        "cost": 0,
+        "image": "https://valcur.github.io/TCG-Arena-Classic/Assets/Cards/Swords10.jpg"
+      }
+    },
+    "name": "Ten of Swords",
+    "type": "Card",
+    "cost": 0,
+    "color": "Yellow",
+    "value": "10",
+    "special": false
+  },
+  "PAGEOFSWORDS": {
+    "id": "PAGEOFSWORDS",
+    "face": {
+      "front": {
+        "name": "Page of Swords",
+        "type": "Card",
+        "cost": 0,
+        "image": "https://valcur.github.io/TCG-Arena-Classic/Assets/Cards/Swords11.jpg"
+      }
+    },
+    "name": "Page of Swords",
+    "type": "Card",
+    "cost": 0,
+    "color": "Yellow",
+    "value": "11",
+    "special": false
+  },
+  "KNIGHTOFSWORDS": {
+    "id": "KNIGHTOFSWORDS",
+    "face": {
+      "front": {
+        "name": "Knight of Swords",
+        "type": "Card",
+        "cost": 0,
+        "image": "https://valcur.github.io/TCG-Arena-Classic/Assets/Cards/Swords12.jpg"
+      }
+    },
+    "name": "Knight of Swords",
+    "type": "Card",
+    "cost": 0,
+    "color": "Yellow",
+    "value": "12",
+    "special": false
+  },
+  "QUEENOFSWORDS": {
+    "id": "QUEENOFSWORDS",
+    "face": {
+      "front": {
+        "name": "Queen of Swords",
+        "type": "Card",
+        "cost": 0,
+        "image": "https://valcur.github.io/TCG-Arena-Classic/Assets/Cards/Swords13.jpg"
+      }
+    },
+    "name": "Queen of Swords",
+    "type": "Card",
+    "cost": 0,
+    "color": "Yellow",
+    "value": "13",
+    "special": false
+  },
+  "KINGOFSWORDS": {
+    "id": "KINGOFSWORDS",
+    "face": {
+      "front": {
+        "name": "King of Swords",
+        "type": "Card",
+        "cost": 0,
+        "image": "https://valcur.github.io/TCG-Arena-Classic/Assets/Cards/Swords14.jpg"
+      }
+    },
+    "name": "King of Swords",
+    "type": "Card",
+    "cost": 0,
+    "color": "Yellow",
+    "value": "14",
+    "special": false
+  },
+  "ACEOFWANDS": {
+    "id": "ACEOFWANDS",
+    "face": {
+      "front": {
+        "name": "Ace of Wands",
+        "type": "Card",
+        "cost": 0,
+        "image": "https://valcur.github.io/TCG-Arena-Classic/Assets/Cards/Wands01.jpg"
+      }
+    },
+    "name": "Ace of Wands",
+    "type": "Card",
+    "cost": 0,
+    "color": "Red",
+    "value": "1",
+    "special": false
+  },
+  "TWOOFWANDS": {
+    "id": "TWOOFWANDS",
+    "face": {
+      "front": {
+        "name": "Two of Wands",
+        "type": "Card",
+        "cost": 0,
+        "image": "https://valcur.github.io/TCG-Arena-Classic/Assets/Cards/Wands02.jpg"
+      }
+    },
+    "name": "Two of Wands",
+    "type": "Card",
+    "cost": 0,
+    "color": "Red",
+    "value": "2",
+    "special": false
+  },
+  "THREEOFWANDS": {
+    "id": "THREEOFWANDS",
+    "face": {
+      "front": {
+        "name": "Three of Wands",
+        "type": "Card",
+        "cost": 0,
+        "image": "https://valcur.github.io/TCG-Arena-Classic/Assets/Cards/Wands03.jpg"
+      }
+    },
+    "name": "Three of Wands",
+    "type": "Card",
+    "cost": 0,
+    "color": "Red",
+    "value": "3",
+    "special": false
+  },
+  "FOUROFWANDS": {
+    "id": "FOUROFWANDS",
+    "face": {
+      "front": {
+        "name": "Four of Wands",
+        "type": "Card",
+        "cost": 0,
+        "image": "https://valcur.github.io/TCG-Arena-Classic/Assets/Cards/Wands04.jpg"
+      }
+    },
+    "name": "Four of Wands",
+    "type": "Card",
+    "cost": 0,
+    "color": "Red",
+    "value": "4",
+    "special": false
+  },
+  "FIVEOFWANDS": {
+    "id": "FIVEOFWANDS",
+    "face": {
+      "front": {
+        "name": "Five of Wands",
+        "type": "Card",
+        "cost": 0,
+        "image": "https://valcur.github.io/TCG-Arena-Classic/Assets/Cards/Wands05.jpg"
+      }
+    },
+    "name": "Five of Wands",
+    "type": "Card",
+    "cost": 0,
+    "color": "Red",
+    "value": "5",
+    "special": false
+  },
+  "SIXOFWANDS": {
+    "id": "SIXOFWANDS",
+    "face": {
+      "front": {
+        "name": "Six of Wands",
+        "type": "Card",
+        "cost": 0,
+        "image": "https://valcur.github.io/TCG-Arena-Classic/Assets/Cards/Wands06.jpg"
+      }
+    },
+    "name": "Six of Wands",
+    "type": "Card",
+    "cost": 0,
+    "color": "Red",
+    "value": "6",
+    "special": false
+  },
+  "SEVENOFWANDS": {
+    "id": "SEVENOFWANDS",
+    "face": {
+      "front": {
+        "name": "Seven of Wands",
+        "type": "Card",
+        "cost": 0,
+        "image": "https://valcur.github.io/TCG-Arena-Classic/Assets/Cards/Wands07.jpg"
+      }
+    },
+    "name": "Seven of Wands",
+    "type": "Card",
+    "cost": 0,
+    "color": "Red",
+    "value": "7",
+    "special": false
+  },
+  "EIGHTOFWANDS": {
+    "id": "EIGHTOFWANDS",
+    "face": {
+      "front": {
+        "name": "Eight of Wands",
+        "type": "Card",
+        "cost": 0,
+        "image": "https://valcur.github.io/TCG-Arena-Classic/Assets/Cards/Wands08.jpg"
+      }
+    },
+    "name": "Eight of Wands",
+    "type": "Card",
+    "cost": 0,
+    "color": "Red",
+    "value": "8",
+    "special": false
+  },
+  "NINEOFWANDS": {
+    "id": "NINEOFWANDS",
+    "face": {
+      "front": {
+        "name": "Nine of Wands",
+        "type": "Card",
+        "cost": 0,
+        "image": "https://valcur.github.io/TCG-Arena-Classic/Assets/Cards/Wands09.jpg"
+      }
+    },
+    "name": "Nine of Wands",
+    "type": "Card",
+    "cost": 0,
+    "color": "Red",
+    "value": "9",
+    "special": false
+  },
+  "TENOFWANDS": {
+    "id": "TENOFWANDS",
+    "face": {
+      "front": {
+        "name": "Ten of Wands",
+        "type": "Card",
+        "cost": 0,
+        "image": "https://valcur.github.io/TCG-Arena-Classic/Assets/Cards/Wands10.jpg"
+      }
+    },
+    "name": "Ten of Wands",
+    "type": "Card",
+    "cost": 0,
+    "color": "Red",
+    "value": "10",
+    "special": false
+  },
+  "PAGEOFWANDS": {
+    "id": "PAGEOFWANDS",
+    "face": {
+      "front": {
+        "name": "Page of Wands",
+        "type": "Card",
+        "cost": 0,
+        "image": "https://valcur.github.io/TCG-Arena-Classic/Assets/Cards/Wands11.jpg"
+      }
+    },
+    "name": "Page of Wands",
+    "type": "Card",
+    "cost": 0,
+    "color": "Red",
+    "value": "11",
+    "special": false
+  },
+  "KNIGHTOFWANDS": {
+    "id": "KNIGHTOFWANDS",
+    "face": {
+      "front": {
+        "name": "Knight of Wands",
+        "type": "Card",
+        "cost": 0,
+        "image": "https://valcur.github.io/TCG-Arena-Classic/Assets/Cards/Wands12.jpg"
+      }
+    },
+    "name": "Knight of Wands",
+    "type": "Card",
+    "cost": 0,
+    "color": "Red",
+    "value": "12",
+    "special": false
+  },
+  "QUEENOFWANDS": {
+    "id": "QUEENOFWANDS",
+    "face": {
+      "front": {
+        "name": "Queen of Wands",
+        "type": "Card",
+        "cost": 0,
+        "image": "https://valcur.github.io/TCG-Arena-Classic/Assets/Cards/Wands13.jpg"
+      }
+    },
+    "name": "Queen of Wands",
+    "type": "Card",
+    "cost": 0,
+    "color": "Red",
+    "value": "13",
+    "special": false
+  },
+  "KINGOFWANDS": {
+    "id": "KINGOFWANDS",
+    "face": {
+      "front": {
+        "name": "King of Wands",
+        "type": "Card",
+        "cost": 0,
+        "image": "https://valcur.github.io/TCG-Arena-Classic/Assets/Cards/Wands14.jpg"
+      }
+    },
+    "name": "King of Wands",
+    "type": "Card",
+    "cost": 0,
+    "color": "Red",
+    "value": "14",
+    "special": false
+  }
 }
