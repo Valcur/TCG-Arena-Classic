@@ -10,8 +10,9 @@ async function iniDeck(deckMode) {
     const handSize = 7
     // shuffle deck
     console.log(deck)
-        await functions.repositionCards()
+    await functions.repositionCards()
     await functions.giveCardTo(deck[0], game.turn.turnOrder[0], "Hand")
+    deck[0].hiddenTo = { _status: "no" }
 
     await functions.repositionCards()
 }
