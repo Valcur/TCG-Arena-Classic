@@ -6,15 +6,42 @@ async function iniDeck(deckMode) {
         deck.push(await functions.createCard(cardId, "CentralDeck"))
     }
     await functions.shuffleSection("CentralDeck")
-
-    const handSize = 7
-    // shuffle deck
-    console.log(deck)
     await functions.repositionCards()
-    await functions.giveCardTo(deck[0], game.turn.turnOrder[0], "Hand")
-    deck[0].hiddenTo = { _status: "no" }
+}
 
-    await functions.repositionCards()
+async function dealTarotWithChien() {
+    const rules = {
+        1: { chienSize: 20, cardsPerPlayer: 58 },
+        2: { chienSize: 20, cardsPerPlayer: 29 },
+        3: { chienSize: 6, cardsPerPlayer: 24 },
+        4: { chienSize: 6, cardsPerPlayer: 18 },
+        5: { chienSize: 3, cardsPerPlayer: 15 },
+    }[game.turn.totalPlayers];
+
+    if (!rules) return; // le tarot classique se joue à 3, 4 ou 5
+
+    const { chienSize, cardsPerPlayer } = rules;
+    const deck = cards.CentralDeck ?? [];
+    const myPosition = game.turn.orderPosition;
+    const startOffset = myPosition * cardsPerPlayer;
+
+    for (let i = 0; i < cardsPerPlayer; i++) {
+        const indexFromTop = deck.length - 1 - startOffset - i;
+        if (indexFromTop < chienSize) break; // zone réservée au chien
+        const card = deck[indexFromTop];
+        if (!card) break;
+        await functions.moveCard(card, "Hand", { skipStepHistory: true });
+    }
+
+    if (game.isHost) {
+        for (let i = 0; i < chienSize; i++) {
+            const card = deck[i];
+            if (!card) break;
+            await functions.moveCard(card, "Chien", { skipStepHistory: true });
+        }
+    }
+
+    await functions.repositionCards();
 }
 
 const deckLists = {
