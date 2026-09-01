@@ -11,7 +11,7 @@ async function iniDeck(deckMode) {
 }
 
 async function dealTarotWithChien() {
-    game.data.GameplayManager.deckOrder = cards.CentralDeck.map(c => c.id)
+    game.data.Manager.deckOrder = cards.CentralDeck.map(c => c.id)
     const rules = {
         1: { chienSize: 20, cardsPerPlayer: 58 },
         2: { chienSize: 20, cardsPerPlayer: 29 },
