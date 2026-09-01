@@ -11,7 +11,6 @@ async function iniDeck(deckMode) {
 }
 
 async function dealTarotWithChien() {
-    game.data.Manager.deckOrder = cards.CentralDeck.map(c => c.id)
     const rules = {
         1: { chienSize: 20, cardsPerPlayer: 58 },
         2: { chienSize: 20, cardsPerPlayer: 29 },
@@ -23,7 +22,7 @@ async function dealTarotWithChien() {
     if (!rules) return;
 
     const { chienSize, cardsPerPlayer } = rules;
-    const deckOrder = game.data.GameplayManager.deckOrder;
+    const deckOrder = cards.CentralDeck.map(c => c.id);
     const myPosition = game.turn.orderPosition;
     const startOffset = myPosition * cardsPerPlayer;
 
