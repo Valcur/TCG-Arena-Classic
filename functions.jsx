@@ -23,25 +23,33 @@ async function dealTarotWithChien() {
     if (!rules) return;
 
     const { chienSize, cardsPerPlayer } = rules;
-    const deckOrder = game.data.Manager.deckOrder; // référence stable
+    const deckOrder = game.data.GameplayManager.deckOrder;
     const myPosition = game.turn.orderPosition;
     const startOffset = myPosition * cardsPerPlayer;
-    console.log(deckOrder, startOffset)
+
+    const handCards = [];
     for (let i = 0; i < cardsPerPlayer; i++) {
         const indexFromTop = deckOrder.length - 1 - startOffset - i;
         if (indexFromTop < chienSize) break;
         const cardId = deckOrder[indexFromTop];
         const card = cards.CentralDeck.find(c => c.id === cardId);
-        if (!card) break; // déjà pris par erreur ou pas encore synchronisé
-        await functions.moveCard(card, "Hand", { skipStepHistory: true, noLogs: true });
+        if (!card) break;
+        handCards.push(card);
+    }
+    if (handCards.length > 0) {
+        await functions.moveCards(handCards, "Hand", { skipStepHistory: true });
     }
 
     if (game.isHost) {
+        const chienCards = [];
         for (let i = 0; i < chienSize; i++) {
             const cardId = deckOrder[i];
             const card = cards.CentralDeck.find(c => c.id === cardId);
             if (!card) break;
-            await functions.moveCard(card, "Chien", { skipStepHistory: true, noLogs: true });
+            chienCards.push(card);
+        }
+        if (chienCards.length > 0) {
+            await functions.moveCards(chienCards, "Chien", { skipStepHistory: true });
         }
     }
 
