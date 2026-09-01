@@ -8,10 +8,10 @@ async function iniDeck(deckMode) {
     }
     await functions.shuffleSection("CentralDeck")
     await functions.repositionCards()
-    game.data.GameplayManager.deckOrder = cards.CentralDeck.map(c => c.id)
 }
 
 async function dealTarotWithChien() {
+    game.data.GameplayManager.deckOrder = cards.CentralDeck.map(c => c.id)
     const rules = {
         1: { chienSize: 20, cardsPerPlayer: 58 },
         2: { chienSize: 20, cardsPerPlayer: 29 },
@@ -33,7 +33,7 @@ async function dealTarotWithChien() {
         const cardId = deckOrder[indexFromTop];
         const card = cards.CentralDeck.find(c => c.id === cardId);
         if (!card) break; // déjà pris par erreur ou pas encore synchronisé
-        await functions.moveCard(card, "Hand", { skipStepHistory: true });
+        await functions.moveCard(card, "Hand", { skipStepHistory: true, noLogs: true });
     }
 
     if (game.isHost) {
@@ -41,7 +41,7 @@ async function dealTarotWithChien() {
             const cardId = deckOrder[i];
             const card = cards.CentralDeck.find(c => c.id === cardId);
             if (!card) break;
-            await functions.moveCard(card, "Chien", { skipStepHistory: true });
+            await functions.moveCard(card, "Chien", { skipStepHistory: true, noLogs: true });
         }
     }
 
