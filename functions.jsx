@@ -17,7 +17,7 @@ async function dealTarotWithChien() {
         4: { chienSize: 6, cardsPerPlayer: 18 },
         5: { chienSize: 3, cardsPerPlayer: 15 },
     }[game.turn.totalPlayers];
-
+    console.log(rules)
     if (!rules) return; // le tarot classique se joue à 3, 4 ou 5
 
     const { chienSize, cardsPerPlayer } = rules;
