@@ -24,7 +24,7 @@ async function dealTarotWithChien() {
     const deck = cards.CentralDeck ?? [];
     const myPosition = game.turn.orderPosition;
     const startOffset = myPosition * cardsPerPlayer;
-
+    console.log(cardsPerPlayer)
     for (let i = 0; i < cardsPerPlayer; i++) {
         const indexFromTop = deck.length - 1 - startOffset - i;
         if (indexFromTop < chienSize) break; // zone réservée au chien
