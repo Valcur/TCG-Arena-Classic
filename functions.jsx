@@ -1,4 +1,5 @@
 async function iniDeck(deckMode) {
+    if (!game.isHost) return
     const deckList = deckLists[deckMode]
     if (!deckList) return
     const deck = []
@@ -7,6 +8,7 @@ async function iniDeck(deckMode) {
     }
     await functions.shuffleSection("CentralDeck")
     await functions.repositionCards()
+    game.data.GameplayManager.deckOrder = cards.CentralDeck.map(c => c.id)
 }
 
 async function dealTarotWithChien() {
@@ -18,26 +20,26 @@ async function dealTarotWithChien() {
         5: { chienSize: 3, cardsPerPlayer: 15 },
     }[game.turn.totalPlayers];
 
-    if (!rules) return; // le tarot classique se joue à 3, 4 ou 5
+    if (!rules) return;
 
     const { chienSize, cardsPerPlayer } = rules;
-    const deck = cards.CentralDeck ?? [];
+    const deckOrder = game.data.GameplayManager.deckOrder; // référence stable
     const myPosition = game.turn.orderPosition;
     const startOffset = myPosition * cardsPerPlayer;
-    console.log(cardsPerPlayer)
-    console.log(cards)
+
     for (let i = 0; i < cardsPerPlayer; i++) {
-        const indexFromTop = deck.length - 1 - startOffset - i;
-        if (indexFromTop < chienSize) break; // zone réservée au chien
-        const card = deck[indexFromTop];
-        if (!card) break;
+        const indexFromTop = deckOrder.length - 1 - startOffset - i;
+        if (indexFromTop < chienSize) break;
+        const cardId = deckOrder[indexFromTop];
+        const card = cards.CentralDeck.find(c => c.id === cardId);
+        if (!card) break; // déjà pris par erreur ou pas encore synchronisé
         await functions.moveCard(card, "Hand", { skipStepHistory: true });
-        console.log("draw")
     }
 
     if (game.isHost) {
         for (let i = 0; i < chienSize; i++) {
-            const card = deck[i];
+            const cardId = deckOrder[i];
+            const card = cards.CentralDeck.find(c => c.id === cardId);
             if (!card) break;
             await functions.moveCard(card, "Chien", { skipStepHistory: true });
         }
