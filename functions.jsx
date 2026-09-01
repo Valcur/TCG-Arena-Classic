@@ -26,7 +26,7 @@ async function dealTarotWithChien() {
     const deckOrder = game.data.Manager.deckOrder; // référence stable
     const myPosition = game.turn.orderPosition;
     const startOffset = myPosition * cardsPerPlayer;
-
+    console.log(deckOrder, startOffset)
     for (let i = 0; i < cardsPerPlayer; i++) {
         const indexFromTop = deckOrder.length - 1 - startOffset - i;
         if (indexFromTop < chienSize) break;
