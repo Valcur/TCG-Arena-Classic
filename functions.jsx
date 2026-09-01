@@ -31,6 +31,7 @@ async function dealTarotWithChien() {
         const card = deck[indexFromTop];
         if (!card) break;
         await functions.moveCard(card, "Hand", { skipStepHistory: true });
+        console.log("draw")
     }
 
     if (game.isHost) {
