@@ -59,6 +59,36 @@ async function removeCardProperty() {
     }
 }
 
+async function claimRound() {
+    if (!cards?.PlayedCards) return
+    await functions.moveCards(cards?.PlayedCards, "Won")
+    await functions.repositionCards()
+}
+
+async function updateMyScore() {
+    if (!cards?.Won) return
+    let total = 0
+    for (const card of cards?.Won) {
+        const cardData = functions.getCardData(card)
+        const value = parseInt(cardData.value, 10)
+
+        if (cardData.special) {
+            // Atouts : les 3 bouts (Excuse=0, Petit=1, Le Monde=21) valent 4.5, le reste 0.5
+            total += (value === 0 || value === 1 || value === 21) ? 4.5 : 0.5
+        } else {
+            // Cartes de couleur
+            switch (value) {
+                case 14: total += 4.5; break // Roi
+                case 13: total += 3.5; break // Dame
+                case 12: total += 2.5; break // Cavalier
+                case 11: total += 1.5; break // Valet
+                default: total += 0.5        // As à 10
+            }
+        }
+    }
+    game.data.Manager.score = total
+}
+
 const deckLists = {
     "tarotDeck": [
         "THEFOOL",
