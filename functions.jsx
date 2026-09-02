@@ -12,7 +12,7 @@ async function iniDeck(deckMode) {
 
 async function dealTarotWithChien() {
     const rules = {
-        1: { chienSize: 20, cardsPerPlayer: 58 },
+        1: { chienSize: 20, cardsPerPlayer: 26 },
         2: { chienSize: 20, cardsPerPlayer: 29 },
         3: { chienSize: 6, cardsPerPlayer: 24 },
         4: { chienSize: 6, cardsPerPlayer: 18 },
@@ -62,6 +62,12 @@ async function removeCardProperty() {
 async function claimRound() {
     if (!cards?.PlayedCards) return
     await functions.moveCards(cards?.PlayedCards, "Won")
+    await functions.repositionCards()
+}
+
+async function becomeAttacker() {
+    if (!cards?.Chien) return
+    await functions.moveCards(cards?.Chien, "Hand")
     await functions.repositionCards()
 }
 
