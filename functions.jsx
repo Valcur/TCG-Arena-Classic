@@ -53,6 +53,12 @@ async function dealTarotWithChien() {
     await functions.repositionCards();
 }
 
+async function removeCardProperty() {
+    for (const card of transitionCards) {
+        functions.giveCardTo(card)
+    }
+}
+
 const deckLists = {
     "tarotDeck": [
         "THEFOOL",
