@@ -22,16 +22,15 @@ async function dealTarotWithChien() {
     if (!rules) return;
 
     const { chienSize, cardsPerPlayer } = rules;
-    const deckOrder = cards.CentralDeck.map(c => c.id);
+    const deck = cards.CentralDeck;
     const myPosition = game.turn.orderPosition;
     const startOffset = myPosition * cardsPerPlayer;
 
     const handCards = [];
     for (let i = 0; i < cardsPerPlayer; i++) {
-        const indexFromTop = deckOrder.length - 1 - startOffset - i;
+        const indexFromTop = deck.length - 1 - startOffset - i;
         if (indexFromTop < chienSize) break;
-        const cardId = deckOrder[indexFromTop];
-        const card = cards.CentralDeck.find(c => c.id === cardId);
+        const card = deck[indexFromTop];
         if (!card) break;
         handCards.push(card);
     }
@@ -42,8 +41,7 @@ async function dealTarotWithChien() {
     if (game.isHost) {
         const chienCards = [];
         for (let i = 0; i < chienSize; i++) {
-            const cardId = deckOrder[i];
-            const card = cards.CentralDeck.find(c => c.id === cardId);
+            const card = deck[i];
             if (!card) break;
             chienCards.push(card);
         }
