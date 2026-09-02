@@ -36,7 +36,7 @@ async function dealTarotWithChien() {
         handCards.push(card);
     }
     if (handCards.length > 0) {
-        await functions.moveCards(handCards, "Hand", { skipStepHistory: true });
+        await functions.moveCards(handCards, "Hand", { skipStepHistory: true, noLogs: true });
     }
 
     if (game.isHost) {
@@ -48,7 +48,7 @@ async function dealTarotWithChien() {
             chienCards.push(card);
         }
         if (chienCards.length > 0) {
-            await functions.moveCards(chienCards, "Chien", { skipStepHistory: true });
+            await functions.moveCards(chienCards, "Chien", { skipStepHistory: true, noLogs: true });
         }
     }
 
