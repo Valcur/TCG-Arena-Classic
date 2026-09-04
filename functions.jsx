@@ -76,7 +76,7 @@ async function newTurnTest() {
     const deck = await functions.getDeck()
     if (deck?.length <= 0) return
     const bottomCard = deck[0]
-    await functions.chatLog("revealed his bottom card: {{ card }}", { card: bottomCard })
+    await functions.chatLog("revealed his bottom card: {{card}}", { card: bottomCard })
 }
 
 async function updateMyScore() {
