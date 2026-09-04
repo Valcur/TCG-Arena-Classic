@@ -67,6 +67,7 @@ async function claimRound() {
 
 async function becomeAttacker() {
     if (!cards?.Chien) return
+    game.data.Manager.isAttackerPicked = true
     await functions.moveCards(cards?.Chien, "Hand")
     await functions.repositionCards()
 }
