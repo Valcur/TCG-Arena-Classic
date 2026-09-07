@@ -1,6 +1,7 @@
 async function iniDeck(deckMode) {
     if (!game.isHost) return
     const deckList = deckLists[deckMode]
+    console.log("DECK", deckList)
     if (!deckList) return
     const deck = []
     for (const cardId of deckList) {
