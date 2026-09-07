@@ -19,7 +19,6 @@ async function dealClassic(cardsPerPlayer) {
     const handCards = [];
     for (let i = 0; i < cardsPerPlayer; i++) {
         const indexFromTop = deck.length - 1 - startOffset - i;
-        if (indexFromTop < chienSize) break;
         const card = deck[indexFromTop];
         if (!card) break;
         handCards.push(card);
@@ -206,17 +205,57 @@ const deckLists = {
         "KINGOFWANDS"
     ],
     "classicDeck": [
-        "ACEOFHEARTS", "TWOOFHEARTS", "THREEOFHEARTS", "FOUROFHEARTS", "FIVEOFHEARTS",
-        "SIXOFHEARTS", "SEVENOFHEARTS", "EIGHTOFHEARTS", "NINEOFHEARTS", "TENOFHEARTS",
-        "JACKOFHEARTS", "QUEENOFHEARTS", "KINGOFHEARTS",
-        "ACEOFDIAMONDS", "TWOOFDIAMONDS", "THREEOFDIAMONDS", "FOUROFDIAMONDS", "FIVEOFDIAMONDS",
-        "SIXOFDIAMONDS", "SEVENOFDIAMONDS", "EIGHTOFDIAMONDS", "NINEOFDIAMONDS", "TENOFDIAMONDS",
-        "JACKOFDIAMONDS", "QUEENOFDIAMONDS", "KINGOFDIAMONDS",
-        "ACEOFCLUBS", "TWOOFCLUBS", "THREEOFCLUBS", "FOUROFCLUBS", "FIVEOFCLUBS",
-        "SIXOFCLUBS", "SEVENOFCLUBS", "EIGHTOFCLUBS", "NINEOFCLUBS", "TENOFCLUBS",
-        "JACKOFCLUBS", "QUEENOFCLUBS", "KINGOFCLUBS",
-        "ACEOFSPADES", "TWOOFSPADES", "THREEOFSPADES", "FOUROFSPADES", "FIVEOFSPADES",
-        "SIXOFSPADES", "SEVENOFSPADES", "EIGHTOFSPADES", "NINEOFSPADES", "TENOFSPADES",
-        "JACKOFSPADES", "QUEENOFSPADES", "KINGOFSPADES"
+        "ACEOFCUPS",
+        "TWOOFCUPS",
+        "THREEOFCUPS",
+        "FOUROFCUPS",
+        "FIVEOFCUPS",
+        "SIXOFCUPS",
+        "SEVENOFCUPS",
+        "EIGHTOFCUPS",
+        "NINEOFCUPS",
+        "TENOFCUPS",
+        "PAGEOFCUPS",
+        "QUEENOFCUPS",
+        "KINGOFCUPS",
+        "ACEOFPENTACLES",
+        "TWOOFPENTACLES",
+        "THREEOFPENTACLES",
+        "FOUROFPENTACLES",
+        "FIVEOFPENTACLES",
+        "SIXOFPENTACLES",
+        "SEVENOFPENTACLES",
+        "EIGHTOFPENTACLES",
+        "NINEOFPENTACLES",
+        "TENOFPENTACLES",
+        "PAGEOFPENTACLES",
+        "QUEENOFPENTACLES",
+        "KINGOFPENTACLES",
+        "ACEOFSWORDS",
+        "TWOOFSWORDS",
+        "THREEOFSWORDS",
+        "FOUROFSWORDS",
+        "FIVEOFSWORDS",
+        "SIXOFSWORDS",
+        "SEVENOFSWORDS",
+        "EIGHTOFSWORDS",
+        "NINEOFSWORDS",
+        "TENOFSWORDS",
+        "PAGEOFSWORDS",
+        "QUEENOFSWORDS",
+        "KINGOFSWORDS",
+        "ACEOFWANDS",
+        "TWOOFWANDS",
+        "THREEOFWANDS",
+        "FOUROFWANDS",
+        "FIVEOFWANDS",
+        "SIXOFWANDS",
+        "SEVENOFWANDS",
+        "EIGHTOFWANDS",
+        "NINEOFWANDS",
+        "TENOFWANDS",
+        "PAGEOFWANDS",
+        "QUEENOFWANDS",
+        "KINGOFWANDS"
     ]
 }
