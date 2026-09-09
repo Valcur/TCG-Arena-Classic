@@ -145,8 +145,8 @@ async function updateMyHandValue() {
     }
 }
 
-function computeHandValue() {
-    const handCards = cards?.MyDraw ?? []
+function computeHandValue(hand) {
+    const handCards = hand ?? cards?.MyDraw ?? []
     let total = 0
     let aces = 0
     for (const card of handCards) {
@@ -186,20 +186,28 @@ async function checkAllPlayersDone(oppGame) {
 async function dealerPlay() {
     if (!game.isHost) return
 
-    // révéler la carte cachée (la 2ème carte distribuée au croupier)
     const hiddenCard = cards.Croupier[1]
     if (hiddenCard) {
         await functions.hideCards([hiddenCard], "no")
     }
 
-    let total = computeHandValue(cards.Croupier)
+    // copies locales : on ne relit plus `cards` tant que la boucle tourne
+    let deck = [...cards.CentralDeck]
+    let croupierCards = [...cards.Croupier]
+    let total = computeHandValue(croupierCards)
+
     while (total < 17) {
-        const card = cards.CentralDeck[cards.CentralDeck.length - 1]
-        functions.chatLog("t:" + total, + " : " + cards.CentralDeck.length)
+        const card = deck[deck.length - 1]
         if (!card) break
+
+        deck = deck.slice(0, -1)
+        croupierCards = [...croupierCards, card]
+
         await functions.moveCards([card], "Croupier", { skipStepHistory: true })
         await functions.repositionCards()
-        total = computeHandValue(cards.Croupier)
+
+        total = computeHandValue(croupierCards)
+        functions.chatLog("croupier: " + total + " (deck restant: " + deck.length + ")")
     }
 
     await resolveRound()
