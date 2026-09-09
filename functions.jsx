@@ -215,7 +215,7 @@ async function dealerPlay() {
 }
 
 async function resolveRound(dealerTotal) {
-    if (game.data.CroupierManager !== 0) return
+    if (game.data.CroupierManager.total !== 0) return
     game.data.CroupierManager.total = dealerTotal
     const myTotal = game.data.Manager.total
 
