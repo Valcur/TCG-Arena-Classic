@@ -137,6 +137,14 @@ async function dealBlackjack() {
     await functions.repositionCards()
 }
 
+async function updateMyHandValue() {
+    const total = computeHandValue()
+    game.data.Manager.total = total
+    if (total > 21) {
+        game.data.Manager.state = "BUST"
+    }
+}
+
 function computeHandValue() {
     const handCards = cards?.MyDraw ?? []
     let total = 0
@@ -164,13 +172,12 @@ async function stand() {
 async function checkAllPlayersDone(oppGame) {
     const playerGame = oppGame || game
     if (!game.isHost) return
-    functions.chatLog("checking if all done")
+
     if (playerGame.data.Manager.state !== "PLAYING") {
         game.data.Manager.playerDone[playerGame.playerId] = true
     }
 
     const allDone = Object.keys(game.data.Manager.playerDone).length >= game.turn.totalPlayers
-    functions.chatLog("done: " + Object.keys(game.data.Manager.playerDone).length + " / " + game.turn.totalPlayers)
     if (allDone) {
         await dealerPlay()
     }
