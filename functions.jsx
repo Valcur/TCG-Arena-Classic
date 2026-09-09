@@ -173,7 +173,7 @@ async function stand() {
 async function checkAllPlayersDone(oppGame) {
     const playerGame = oppGame || game
     if (!game.isHost) return
-    if ( game.data.Manager.playerDone === "FINISHED") return
+    if (game.data.Manager.playerDone === "FINISHED") return
 
     if (playerGame.data.Manager.state !== "PLAYING") {
         game.data.Manager.playerDone[playerGame.playerId] = true
@@ -211,11 +211,12 @@ async function dealerPlay() {
         total = computeHandValue(croupierCards)
     }
 
-    await resolveRound()
+    resolveRound(total)
 }
 
-async function resolveRound() {
-    const dealerTotal = computeHandValue(cards.Croupier)
+async function resolveRound(dealerTotal) {
+    if (game.data.CroupierManager !== 0) return
+    game.data.CroupierManager.total = dealerTotal
     const myTotal = game.data.Manager.total
 
     if (game.data.Manager.state === "BUST") {
