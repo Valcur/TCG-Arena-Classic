@@ -130,7 +130,7 @@ async function dealBlackjack() {
             await functions.moveCards([dealerUp], "Croupier", { skipStepHistory: true, noLogs: true })
         }
         if (dealerDown) {
-            await functions.moveCards([dealerDown], "Croupier", { skipStepHistory: true, noLogs: true, isHidden: true })
+            await functions.moveCards([dealerDown], "Croupier", { skipStepHistory: true, noLogs: true, overrideState: { isHidden: true } })
         }
     }
 
