@@ -161,11 +161,12 @@ async function stand() {
     await checkAllPlayersDone()
 }
 
-async function checkAllPlayersDone(_game) {
+async function checkAllPlayersDone(oppGame) {
+    const playerGame = oppGame || game
     if (!game.isHost) return
     functions.chatLog("checking if all done")
-    if (_game.data.Manager.state !== "PLAYING") {
-        game.data.Manager.playerDone[_game.playerId] = true
+    if (playerGame.data.Manager.state !== "PLAYING") {
+        game.data.Manager.playerDone[playerGame.playerId] = true
     }
 
     const allDone = Object.keys(game.data.Manager.playerDone).length >= game.turn.totalPlayers
