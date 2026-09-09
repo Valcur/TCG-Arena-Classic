@@ -147,7 +147,7 @@ async function updateMyHandValue() {
 }
 
 function computeHandValue(hand) {
-    const handCards = hand ?? cards?.MyDraw ?? []
+    const handCards = hand ?? []
     let total = 0
     let aces = 0
     for (const card of handCards) {
@@ -173,6 +173,7 @@ async function stand() {
 async function checkAllPlayersDone(oppGame) {
     const playerGame = oppGame || game
     if (!game.isHost) return
+    if ( game.data.Manager.playerDone === "FINISHED") return
 
     if (playerGame.data.Manager.state !== "PLAYING") {
         game.data.Manager.playerDone[playerGame.playerId] = true
@@ -180,7 +181,7 @@ async function checkAllPlayersDone(oppGame) {
 
     const allDone = Object.keys(game.data.Manager.playerDone).length >= game.turn.totalPlayers
     if (allDone) {
-        game.data.Manager.playerDone = {}
+        game.data.Manager.playerDone = "FINISHED"
         await dealerPlay()
     }
 }
@@ -208,7 +209,6 @@ async function dealerPlay() {
         await functions.repositionCards()
 
         total = computeHandValue(croupierCards)
-        functions.chatLog("croupier: " + total + " (deck restant: " + deck.length + ")")
     }
 
     await resolveRound()
@@ -216,7 +216,7 @@ async function dealerPlay() {
 
 async function resolveRound() {
     const dealerTotal = computeHandValue(cards.Croupier)
-    const myTotal = computeHandValue(cards.Hand)
+    const myTotal = game.data.Manager.total
 
     if (game.data.Manager.state === "BUST") {
         functions.chatLog("a perdu (bust).")
