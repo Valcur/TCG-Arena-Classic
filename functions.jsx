@@ -180,6 +180,7 @@ async function checkAllPlayersDone(oppGame) {
 
     const allDone = Object.keys(game.data.Manager.playerDone).length >= game.turn.totalPlayers
     if (allDone) {
+        game.data.Manager.playerDone = {}
         await dealerPlay()
     }
 }
