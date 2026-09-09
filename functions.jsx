@@ -195,12 +195,12 @@ async function dealerPlay() {
     let total = computeHandValue(cards.Croupier)
     while (total < 17) {
         const card = cards.CentralDeck[cards.CentralDeck.length - 1]
+        functions.chatLog("t:" + total, + " : " + cards.CentralDeck.length)
         if (!card) break
         await functions.moveCards([card], "Croupier", { skipStepHistory: true })
         await functions.repositionCards()
         total = computeHandValue(cards.Croupier)
     }
-
 
     await resolveRound()
 }
