@@ -140,6 +140,7 @@ async function dealBlackjack() {
 async function updateMyHandValue() {
     const total = computeHandValue()
     game.data.Manager.total = total
+    await functions.changeCounterValue(0, total)
     if (total > 21) {
         game.data.Manager.state = "BUST"
     }
@@ -191,7 +192,6 @@ async function dealerPlay() {
         await functions.hideCards([hiddenCard], "no")
     }
 
-    // copies locales : on ne relit plus `cards` tant que la boucle tourne
     let deck = [...cards.CentralDeck]
     let croupierCards = [...cards.Croupier]
     let total = computeHandValue(croupierCards)
