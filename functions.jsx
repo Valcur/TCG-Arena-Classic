@@ -138,7 +138,7 @@ async function dealBlackjack() {
 }
 
 async function updateMyHandValue() {
-    const total = computeHandValue()
+    const total = computeHandValue(cards.MyDraw)
     game.data.Manager.total = total
     await functions.changeCounterValue(0, total)
     if (total > 21) {
