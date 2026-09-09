@@ -130,7 +130,7 @@ async function dealBlackjack() {
             await functions.moveCards([dealerUp], "Croupier", { skipStepHistory: true, noLogs: true })
         }
         if (dealerDown) {
-            await functions.moveCards([dealerDown], "Croupier", { skipStepHistory: true, noLogs: true, faceDown: true })
+            await functions.moveCards([dealerDown], "Croupier", { skipStepHistory: true, noLogs: true, isHidden: true })
         }
     }
 
@@ -220,13 +220,13 @@ async function resolveRound(dealerTotal) {
     const myTotal = game.data.Manager.total
 
     if (game.data.Manager.state === "BUST") {
-        functions.chatLog("a perdu (bust).")
+        functions.chatLog("lost (bust)")
     } else if (dealerTotal > 21 || myTotal > dealerTotal) {
-        functions.chatLog("a gagné !")
+        functions.chatLog("won!")
     } else if (myTotal < dealerTotal) {
-        functions.chatLog("a perdu.")
+        functions.chatLog("lost")
     } else {
-        functions.chatLog("égalité (push).")
+        functions.chatLog("draw (push)")
     }
 }
 
