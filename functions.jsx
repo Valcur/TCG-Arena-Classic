@@ -11,25 +11,6 @@ async function iniDeck(deckMode) {
     await functions.repositionCards()
 }
 
-async function dealClassic(cardsPerPlayer) {
-    const deck = cards.CentralDeck;
-    const myPosition = game.turn.orderPosition;
-    const startOffset = myPosition * cardsPerPlayer;
-
-    const handCards = [];
-    for (let i = 0; i < cardsPerPlayer; i++) {
-        const indexFromTop = deck.length - 1 - startOffset - i;
-        const card = deck[indexFromTop];
-        if (!card) break;
-        handCards.push(card);
-    }
-    if (handCards.length > 0) {
-        await functions.moveCards(handCards, "Hand", { skipStepHistory: true, noLogs: true });
-    }
-
-    await functions.repositionCards();
-}
-
 async function dealTarotWithChien() {
     const rules = {
         1: { chienSize: 20, cardsPerPlayer: 26 },
@@ -122,6 +103,119 @@ async function updateMyScore() {
     }
     game.data.Manager.score = total
 }
+
+//---------------- BLACKJACK ---------------- //
+
+async function dealBlackjack() {
+    const deck = cards.CentralDeck
+    const myPosition = game.turn.orderPosition
+    const startOffset = myPosition * 2
+
+    const myCards = []
+    for (let i = 0; i < 2; i++) {
+        const indexFromTop = deck.length - 1 - startOffset - i
+        const card = deck[indexFromTop]
+        if (!card) break
+        myCards.push(card)
+    }
+    if (myCards.length > 0) {
+        await functions.moveCards(myCards, "MyDraw", { skipStepHistory: true, noLogs: true })
+    }
+
+    if (game.isHost) {
+        const offset = game.turn.totalPlayers * 2
+        const dealerUp = deck[deck.length - 1 - offset]
+        const dealerDown = deck[deck.length - 2 - offset]
+        if (dealerUp) {
+            await functions.moveCards([dealerUp], "Croupier", { skipStepHistory: true, noLogs: true })
+        }
+        if (dealerDown) {
+            await functions.moveCards([dealerDown], "Croupier", { skipStepHistory: true, noLogs: true, faceDown: true })
+        }
+    }
+
+    await functions.repositionCards()
+}
+
+function computeHandValue() {
+    const handCards = cards?.MyDraw ?? []
+    let total = 0
+    let aces = 0
+    for (const card of handCards) {
+        const cardData = functions.getCardData(card)
+        const rank = parseInt(cardData.value, 10)
+        if (rank === 1) { aces++; total += 11 }
+        else if (rank > 10) total += 10
+        else total += rank
+    }
+    while (total > 21 && aces > 0) {
+        total -= 10
+        aces--
+    }
+    return total
+}
+
+async function stand() {
+    if (game.data.Manager.state !== "PLAYING") return
+    game.data.Manager.state = "STAND"
+    await checkAllPlayersDone()
+}
+
+async function checkAllPlayersDone(_game) {
+    if (!game.isHost) return
+    functions.chatLog("checking if all done")
+    if (_game.data.Manager.state !== "PLAYING") {
+        game.data.Manager.playerDone[_game.playerId] = true
+    }
+
+    const allDone = Object.keys(game.data.Manager.playerDone).length >= game.turn.totalPlayers
+    functions.chatLog("done: " + Object.keys(game.data.Manager.playerDone).length + " / " + game.turn.totalPlayers)
+    if (allDone) {
+        await dealerPlay()
+    }
+}
+
+async function dealerPlay() {
+    if (!game.isHost) return
+
+    // révéler la carte cachée (la 2ème carte distribuée au croupier)
+    const hiddenCard = cards.Croupier[1]
+    if (hiddenCard) {
+        await functions.hideCards([hiddenCard], "no")
+    }
+
+    let total = computeHandValue(cards.Croupier)
+    while (total < 17) {
+        const card = cards.CentralDeck[cards.CentralDeck.length - 1]
+        if (!card) break
+        await functions.moveCards([card], "Croupier", { skipStepHistory: true })
+        await functions.repositionCards()
+        total = computeHandValue(cards.Croupier)
+    }
+
+
+    await resolveRound()
+}
+
+async function resolveRound() {
+    const dealerTotal = computeHandValue(cards.Croupier)
+    const myTotal = computeHandValue(cards.Hand)
+
+    if (game.data.Manager.state === "BUST") {
+        functions.chatLog("a perdu (bust).")
+    } else if (dealerTotal > 21 || myTotal > dealerTotal) {
+        functions.chatLog("a gagné !")
+    } else if (myTotal < dealerTotal) {
+        functions.chatLog("a perdu.")
+    } else {
+        functions.chatLog("égalité (push).")
+    }
+}
+
+
+
+
+
 
 const deckLists = {
     "tarotDeck": [
