@@ -1,6 +1,6 @@
 {
   "name": "Classic",
-  "menuBackgroundImage": "https://valcur.github.io/TCG-Arena-Classic/Assets/banner.jpeg",
+  "menuBackgroundImage": "https://valcur.github.io/TCG-Arena-Classic/Assets/banner.webp",
   "deckBuilding": {
     "mainFilters": [
       "type",
@@ -9,18 +9,28 @@
     ],
     "formats": [
       {
-        "title": "Classic",
-        "gameplay": "Classic"
+        "title": "Tarot",
+        "gameplay": "Tarot"
+      },
+      {
+        "title": "Blackjack",
+        "gameplay": "Blackjack"
       }
     ]
   },
   "gameplay": {
-    "Classic": {
+    "Tarot": {
       "mulligan": {},
       "newTurn": {
         "drawOnStart": false,
-        "drawPerTurn": 0
+        "drawPerTurn": 0,
+        "sharedTurn": "true"
       },
+      "beforeGameStart": {
+        "forceDecklist": {}
+      },
+      "hideFacedDownCards": "true",
+      "cardRotation": 0,
       "draggableTokens": [],
       "countersStartingValues": [],
       "sections": {
@@ -28,23 +38,45 @@
           "height": 16,
           "layout": {
             "direction": "row",
+            "style": {
+              "alignItems": "center"
+            },
             "content": [
               {
                 "section": "CentralDeck"
+              },
+              {
+                "section": "Chien",
+                "style": {
+                  "width": "18vh"
+                }
+              },
+              {
+                "section": "Buttons"
+              },
+              {
+                "section": "PlayedCards"
               }
             ]
           }
         },
         "layout": {
-          "direction": "row",
-          "content": []
+          "direction": "column",
+          "content": [
+            {
+              "section": "Manager"
+            },
+            {
+              "section": "Won"
+            }
+          ]
         },
         "categoriesAlreadyOnBoard": [],
         "autoPlayFromHand": {
-
+          "Card": "PlayedCards"
         },
         "autoPlayFromStack": {
-
+          "Card": "PlayedCards"
         },
         "sectionsDict": {
           "CentralDeck": {
@@ -52,6 +84,223 @@
             "isHidden": "yes",
             "alignment": "DECK",
             "displayedTitle": "Deck"
+          },
+          "PlayedCards": {
+            "height": 15,
+            "alignment": "CENTER",
+            "isHidden": "no",
+            "events": {
+              "onCardEnter": "await removeCardProperty()"
+            }
+          },
+          "Chien": {
+            "height": 10,
+            "isHidden": "yes"
+          },
+          "Buttons": {
+            "type": "custom",
+            "blueprint": {
+              "type": "div",
+              "props": {
+                "className": "d-flex flex-column justify-content-center px-3",
+                "style": {
+                  "width": "10rem"
+                }
+              },
+              "children": [
+                {
+                  "type": "button",
+                  "children": "Take",
+                  "props": {
+                    "style": {
+                      "display": "{{ game.data.Manager.isTakerPicked ? 'none' : 'block' }}"
+                    }
+                  },
+                  "onClick": "await becomeTaker()"
+                },
+                {
+                  "type": "button",
+                  "children": "Claim round",
+                  "props": {
+                    "style": {
+                      "display": "{{ game.data.Manager.isTakerPicked ? 'block' : 'none' }}"
+                    }
+                  },
+                  "onClick": "await claimRound()"
+                }
+              ]
+            }
+          },
+          "Won": {
+            "height": 18,
+            "alignment": "DECK",
+            "isHidden": "yes",
+            "events": {
+              "onCardEnter": "await updateMyScore()",
+              "onCardLeft": "await updateMyScore()"
+            }
+          },
+          "Manager": {
+            "type": "custom",
+            "defaultValue": {
+              "score": 0,
+              "isTakerPicked": false
+            },
+            "blueprint": {
+              "type": "div",
+              "props": {
+                "className": "box-container player-only",
+                "style": {
+                  "width": "10vh"
+                }
+              },
+              "children": "Score: {{ game.data.Manager.score }}"
+            },
+            "events": {
+              "onStart": "await iniDeck('tarotDeck')",
+              "onPlayersReady": "await dealTarotWithChien()",
+              "onOpponentUpdate": "if (opponentGame.data.Manager.isTakerPicked && !game.data.Manager.isTakerPicked) { game.data.Manager.isTakerPicked = true }",
+              "onNewTurn": "await newTurnTest()"
+            }
+          }
+        }
+      }
+    },
+    "Blackjack": {
+      "mulligan": {},
+      "newTurn": {
+        "drawOnStart": false,
+        "drawPerTurn": 0,
+        "sharedTurn": "true"
+      },
+      "beforeGameStart": {
+        "forceDecklist": {}
+      },
+      "hideFacedDownCards": "true",
+      "cardRotation": 0,
+      "draggableTokens": [],
+      "countersStartingValues": [0],
+      "sections": {
+        "sharedZone": {
+          "height": 16,
+          "layout": {
+            "direction": "row",
+            "style": {
+              "alignItems": "center"
+            },
+            "content": [
+              {
+                "section": "CentralDeck"
+              },
+              {
+                "section": "CroupierManager"
+              },
+              {
+                "section": "Croupier"
+              }
+            ]
+          }
+        },
+        "layout": {
+          "direction": "column",
+          "content": [
+            {
+              "section": "Manager"
+            },
+            {
+              "section": "MyDraw"
+            }
+          ]
+        },
+        "categoriesAlreadyOnBoard": [],
+        "autoPlayFromHand": {
+          "Card": "MyDraw"
+        },
+        "autoPlayFromStack": {
+          "Card": "MyDraw"
+        },
+        "sectionsDict": {
+          "CentralDeck": {
+            "height": 15,
+            "isHidden": "yes",
+            "alignment": "DECK",
+            "displayedTitle": "Deck"
+          },
+          "Croupier": {
+            "height": 15,
+            "alignment": "CENTER",
+            "isHidden": "no",
+            "noQuickActions": true,
+            "events": {
+              "onCardEnter": "await removeCardProperty()"
+            }
+          },
+          "MyDraw": {
+            "height": 18,
+            "alignment": "CENTER",
+            "isHidden": "no",
+            "noQuickActions": true,
+            "events": {
+              "onCardEnter": "await updateMyHandValue()",
+              "onCardLeft": "await updateMyHandValue()"
+            }
+          },
+          "CroupierManager": {
+            "type": "custom",
+            "defaultValue": {
+              "total": 0
+            },
+            "blueprint": {
+              "type": "div",
+              "children": "{{ game.data.CroupierManager.total }}",
+              "props": {
+                "style": {
+                  "fontWeight": "800",
+                  "fontSize": "3rem",
+                  "width": "10rem",
+                  "visibility": "{{ game.data.CroupierManager.total > 0 ? 'visible' : 'hidden' }}"
+                }
+              }
+            },
+            "events": {
+              "onOpponentUpdate": "resolveRound(opponentGame.data.CroupierManager.total)"
+            }
+          },
+          "Manager": {
+            "type": "custom",
+            "defaultValue": {
+              "state": "PLAYING",
+              "total": 0,
+              "playerDone": {}
+            },
+            "blueprint": {
+              "type": "div",
+              "props": {
+                "className": "d-flex gap-3 mx-auto align-items-center justify-content-center",
+                "style": {
+                  "width": "40vw"
+                }
+              },
+              "children": [
+                "Click the central deck to draw one more card. Press the button when you want to stop.",
+                {
+                  "type": "button",
+                  "children": "Stop",
+                  "props": {
+                    "style": {
+                      "visibility": "{{ game.data.Manager.state === 'PLAYING' ? 'visible' : 'hidden' }}"
+                    }
+                  },
+                  "onClick": "await stand()"
+                }
+              ]
+            },
+            "events": {
+              "onStart": "await iniDeck('classicDeck')",
+              "onPlayersReady": "await dealBlackjack()",
+              "onUpdate": "await checkAllPlayersDone()",
+              "onOpponentUpdate": "await checkAllPlayersDone(opponentGame)"
+            }
           }
         }
       }
