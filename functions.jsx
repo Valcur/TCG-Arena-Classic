@@ -108,6 +108,11 @@ async function updateMyScore() {
 
 async function dealBlackjack() {
     const deck = cards.CentralDeck
+    const deckIds = deck.map(c => c.id)
+    const uniqueIds = new Set(deckIds)
+    if (uniqueIds.size !== deckIds.length) {
+        console.warn("DOUBLON DÉJÀ DANS CentralDeck avant la pioche:", deckIds.length - uniqueIds.size, "en trop", deckIds);
+    }
     const myPosition = game.turn.orderPosition
     const startOffset = myPosition * 2
 
