@@ -56,6 +56,7 @@ async function dealTarotWithChien() {
 
 async function removeCardProperty() {
     for (const card of transitionCards) {
+        console.log(card)
         functions.giveCardTo(card)
     }
 }
