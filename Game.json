@@ -207,10 +207,7 @@
               "section": "Manager"
             },
             {
-              "section": "MyDraw",
-              "style": {
-                "width": "20vh"
-              }
+              "section": "MyDraw"
             }
           ]
         },
@@ -239,8 +236,7 @@
           },
           "MyDraw": {
             "height": 18,
-            "alignment": "END",
-            "opponentAalignment": "END",
+            "alignment": "CENTER",
             "isHidden": "no",
             "noQuickActions": true,
             "events": {
