@@ -24,12 +24,12 @@
       "newTurn": {
         "drawOnStart": false,
         "drawPerTurn": 0,
-        "sharedTurn": "true"
+        "sharedTurn": true
       },
       "beforeGameStart": {
         "forceDecklist": {}
       },
-      "hideFacedDownCards": "true",
+      "hideFacedDownCards": true,
       "cardRotation": 0,
       "draggableTokens": [],
       "countersStartingValues": [],
@@ -159,8 +159,7 @@
             "events": {
               "onStart": "await iniDeck('tarotDeck')",
               "onPlayersReady": "await dealTarotWithChien()",
-              "onOpponentUpdate": "if (opponentGame.data.Manager.isTakerPicked && !game.data.Manager.isTakerPicked) { game.data.Manager.isTakerPicked = true }",
-              "onNewTurn": "await newTurnTest()"
+              "onOpponentUpdate": "if (opponentGame.data.Manager.isTakerPicked && !game.data.Manager.isTakerPicked) { game.data.Manager.isTakerPicked = true }"
             }
           }
         }
@@ -171,12 +170,12 @@
       "newTurn": {
         "drawOnStart": false,
         "drawPerTurn": 0,
-        "sharedTurn": "true"
+        "sharedTurn": true
       },
       "beforeGameStart": {
         "forceDecklist": {}
       },
-      "hideFacedDownCards": "true",
+      "hideFacedDownCards": true,
       "cardRotation": 0,
       "draggableTokens": [],
       "countersStartingValues": [0],
@@ -208,7 +207,10 @@
               "section": "Manager"
             },
             {
-              "section": "MyDraw"
+              "section": "MyDraw",
+              "style": {
+                "width": "20vh"
+              }
             }
           ]
         },
@@ -237,7 +239,8 @@
           },
           "MyDraw": {
             "height": 18,
-            "alignment": "CENTER",
+            "alignment": "END",
+            "opponentAalignment": "END",
             "isHidden": "no",
             "noQuickActions": true,
             "events": {
@@ -276,7 +279,7 @@
             "blueprint": {
               "type": "div",
               "props": {
-                "className": "d-flex gap-3 mx-auto align-items-center justify-content-center",
+                "className": "d-flex player-only gap-3 mx-auto align-items-center justify-content-center",
                 "style": {
                   "width": "40vw"
                 }
