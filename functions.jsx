@@ -71,7 +71,7 @@ async function claimRound() {
 async function becomeTaker() {
     if (!cards?.Chien) return
     game.data.Manager.isTakerPicked = true
-    await functions.moveCards(cards?.Chien, "Hand")
+    await functions.moveCards(cards?.Chien, "Hand", {  skipStepHistory: true, noLogs: true })
     await functions.repositionCards()
 }
 
