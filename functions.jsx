@@ -26,7 +26,7 @@ async function dealTarotWithChien() {
     const deck = cards.CentralDeck;
     const myPosition = game.turn.orderPosition;
     const startOffset = myPosition * cardsPerPlayer;
-
+    console.log("MY DRAW: ", indexFromTop, startOffset)
     const handCards = [];
     for (let i = 0; i < cardsPerPlayer; i++) {
         const indexFromTop = deck.length - 1 - startOffset - i;
