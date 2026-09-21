@@ -11,10 +11,20 @@ async function iniDeck(deckMode) {
     await functions.repositionCards()
 }
 
+async function removeCardProperty() {
+    for (const card of transitionCards) {
+        console.log(card)
+        await functions.giveCardTo(card)
+    }
+    await functions.repositionCards()
+}
+
+//---------------- TAROT ---------------- //
+
 async function dealTarotWithChien() {
     const rules = {
-        1: { chienSize: 20, cardsPerPlayer: 26 },
-        2: { chienSize: 20, cardsPerPlayer: 29 },
+        1: { chienSize: 6, cardsPerPlayer: 24 },
+        2: { chienSize: 6, cardsPerPlayer: 24 },
         3: { chienSize: 6, cardsPerPlayer: 24 },
         4: { chienSize: 6, cardsPerPlayer: 18 },
         5: { chienSize: 3, cardsPerPlayer: 15 },
@@ -26,7 +36,6 @@ async function dealTarotWithChien() {
     const deck = cards.CentralDeck;
     const myPosition = game.turn.orderPosition;
     const startOffset = myPosition * cardsPerPlayer;
-    console.log("MY DRAW: ", startOffset, deck.length)
     const handCards = [];
     for (let i = 0; i < cardsPerPlayer; i++) {
         const indexFromTop = deck.length - 1 - startOffset - i;
@@ -52,14 +61,6 @@ async function dealTarotWithChien() {
     }
 
     await functions.repositionCards();
-}
-
-async function removeCardProperty() {
-    for (const card of transitionCards) {
-        console.log(card)
-        await functions.giveCardTo(card)
-    }
-    await functions.repositionCards()
 }
 
 async function claimRound() {
@@ -99,7 +100,7 @@ async function updateMyScore() {
                 case 13: total += 3.5; break // Dame
                 case 12: total += 2.5; break // Cavalier
                 case 11: total += 1.5; break // Valet
-                default: total += 0.5        // As à 10
+                default: total += 0.5        // De As à 10
             }
         }
     }
@@ -110,11 +111,6 @@ async function updateMyScore() {
 
 async function dealBlackjack() {
     const deck = cards.CentralDeck
-    const deckIds = deck.map(c => c.id)
-    const uniqueIds = new Set(deckIds)
-    if (uniqueIds.size !== deckIds.length) {
-        console.warn("DOUBLON DÉJÀ DANS CentralDeck avant la pioche:", deckIds.length - uniqueIds.size, "en trop", deckIds);
-    }
     const myPosition = game.turn.orderPosition
     const startOffset = myPosition * 2
 
